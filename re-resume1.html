@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>施芷崴
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>施芷崴的個人履歷 - 114018092</title>
-    <style>應徵履歷
-        /* CSS 樣式設定 */
+    <style>
         :root {
             --primary-color: #2c3e50;
             --accent-color: #3498db;
@@ -13,7 +12,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             color: #333;
             line-height: 1.6;
@@ -30,11 +29,29 @@
             border-radius: 8px;
         }
 
+        /* 新增的 Header 排版樣式 */
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 20px;
             margin-bottom: 30px;
+            gap: 30px; /* 照片與文字的間距 */
+        }
+
+        /* 照片樣式設定 */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 圓形剪裁 */
+            object-fit: cover; /* 確保圖片不變形 */
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-info {
+            text-align: left;
         }
 
         h1 { margin: 0; color: var(--primary-color); }
@@ -71,20 +88,35 @@
         #contact-btn:hover { background-color: #2980b9; }
 
         .hidden-info { display: none; margin-top: 15px; font-style: italic; }
+
+        /* 手機版排版調整 */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-info {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>施芷崴 <small>(姓名範例)</small></h1>
-        <p>學號：<span class="student-id">114018092</span></p>
-        <p>求職意向：家教 餐飲</p>
+        <img src="20240523_111609.jpg" alt="施芷崴的照片" class="profile-photo">
+        
+        <div class="header-info">
+            <h1>施芷崴 <small style="font-size: 0.5em; color: #777;"></small></h1>
+            <p>學號：<span class="student-id">114018092</span></p>
+            <p>求職意向：<strong>家教 | 餐飲</strong></p>
+        </div>
     </header>
 
     <section>
         <h2>關於我</h2>
-        <p>我是一名對技術充滿熱情的學生，學號為 114018092。擅長解決問題。</p>
+        <p>我是一名就讀於亞洲大學聽語系的學生，對學習新技術充滿熱情。我具備良好的問題解決能力與耐心，希望能將專業所學應用於家教或餐飲服務中。</p>
     </section>
 
     <section>
@@ -96,25 +128,24 @@
     <section>
         <h2>學歷與經歷</h2>
         <ul>
-            <li><strong>亞洲大學 - 聽語系</strong> (2025 - 至今)</li>
-            <li><strong>校園專案：</strong> 無</li>
-            <li><strong>社團經驗：</strong> 無</li>
+            <li><strong>亞洲大學 - 聽力暨語言治療學系</strong> (2025 - 至今)</li>
+            <li><strong>技能專長：</strong> 網頁基礎開發 (HTML/CSS)、基礎 Python 程式設計</li>
+            <li><strong>個人特質：</strong> 認真負責、樂於與人溝通</li>
         </ul>
     </section>
 
     <section style="text-align: center;">
         <button id="contact-btn">顯示聯繫方式</button>
         <div id="info" class="hidden-info">
-            Email: student114018092@example.edu.tw <br>
+            Email: 114018092@live.asia.edu.tw <br>
             GitHub: github.com/user114018092
         </div>
     </section>
 </div>
 
 <script>
-    // JavaScript 功能
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. 動態生成技能標籤
+        // 動態生成技能標籤
         const skills = ['HTML5', 'CSS3', 'JavaScript', 'React', 'Git', 'Python'];
         const container = document.getElementById('skills-container');
         
@@ -125,7 +156,7 @@
             container.appendChild(span);
         });
 
-        // 2. 按鈕點擊交互
+        // 按鈕點擊交互
         const btn = document.getElementById('contact-btn');
         const info = document.getElementById('info');
 
@@ -136,7 +167,6 @@
             } else {
                 info.style.display = 'block';
                 btn.innerText = '隱藏聯繫方式';
-                console.log("查閱學號 114018092 的聯繫資訊");
             }
         });
     });
